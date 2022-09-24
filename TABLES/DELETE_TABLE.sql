@@ -1,0 +1,8 @@
+
+USE LUCAS_ALTER
+
+--SELECT * FROM Course
+
+DELETE FROM Course
+
+--WHERE Course_ID IS NULL
