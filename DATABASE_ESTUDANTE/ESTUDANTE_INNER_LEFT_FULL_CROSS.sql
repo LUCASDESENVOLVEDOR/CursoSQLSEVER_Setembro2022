@@ -44,23 +44,8 @@ SELECT * FROM Estudante_Dados
    --
    FULL JOIN Disciplina_Dados as D ON (E.Estudante_ID = D.Estudante_ID)
 
-   ---
+   -------
    SELECT  E.*, D.*
    FROM Estudante_Dados as E
-   --
+   -----
    CROSS JOIN Disciplina_Dados as D 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

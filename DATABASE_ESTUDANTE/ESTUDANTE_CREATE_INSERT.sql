@@ -33,6 +33,35 @@ GO
 	GO
 
 
+	------>
+	
+	CREATE TABLE Desempenho_Dados(
+		Desempenho_ID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+		Estudante_ID INT NOT NULL,
+		Disciplina_ID INT NOT NULL,
+		Desempenho_Nota DECIMAL(18,3) NOT NULL,
+
+		CONSTRAINT Estudante_Desempenho_FK FOREIGN KEY (Estudante_ID)
+		REFERENCES Estudante_Dados(Estudante_ID),
+
+		CONSTRAINT Disciplina_FK FOREIGN KEY (Disciplina_ID)
+		REFERENCES Disciplina_Dados(Disciplina_ID)
+	)
+	GO
+
+	--
+	--SELECT * FROM Estudante_Dados
+	--SELECT * FROM Disciplina_Dados
+
+	INSERT INTO Desempenho_Dados (Estudante_ID,Disciplina_ID,Desempenho_Nota)
+	VALUES (1,1,8.5),(4,6,10.0),(3,7,7.8)
+
+
+
+
+
+
+
 	--INSERIR DADOS NA TABELA DE ESTUDANTE
 
 	INSERT INTO Estudante_Dados (Nome,Estudante_Sobrenome,Estudante_Telefone,Estudante_Email,Estudante_DataNasc)
