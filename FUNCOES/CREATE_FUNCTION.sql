@@ -19,6 +19,24 @@ GO
 	END
 	
 
+	-->CRIE UMA FUNCAO QUE REALIZE A SOMA DE 2 NUMEROS !!!!!
+
+	DECLARE @num1 INT = 10
+	DECLARE @num2 INT = 20
+
+	--PRINT CONVERT(VARCHAR(20),@num2)
+
+	SELECT DBO.SOMA(@num1,@num2) ResultadoSoma
+	
+	
+	CREATE FUNCTION SOMA(@num1 INT, @num2 INT)
+	RETURNS INT
+
+	BEGIN
+	   RETURN @num1 + @num2
+	END
 
 
+
+	
 
