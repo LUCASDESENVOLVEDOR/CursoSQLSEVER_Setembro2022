@@ -10,7 +10,7 @@ BEGIN TRAN
 --analise do que foi realizado
 SELECT * FROM Desempenho_Dados
 
---nunca esquecer de executar COMMIT ou ROLLBACK
+-->nunca esquecer de executar COMMIT ou ROLLBACK
 
 COMMIT --> Confirmação do que foi  realizado
 
