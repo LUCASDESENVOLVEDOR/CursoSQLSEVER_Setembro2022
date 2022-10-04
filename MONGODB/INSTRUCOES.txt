@@ -5,7 +5,7 @@
 > show databases
 
 //instrução insert
->db.ColecColab.insert({ IDColab: 1, NomeColab: 'Amanda' })
+>db.ColecColab.insert({ IDColab: 8, NomeColab: 9 })
 
 //inserir varios dados ao mesmo tempo
 var dadosColab = [{IDColab: 2, NomeColab: 'Anderson'},{IDColab: 3, NomeColab: 'Eduardo' },{IDColab: 4, NomeColab: 'Kauane'},{IDColab: 5, NomeColab: 'Luiz'},{IDColab:6, NomeColab: 'Nicario'}]
@@ -26,7 +26,9 @@ db.ColecColab.find({IDColab :{$lte: 3}}).pretty()
 //Operadores lógicos para busca parametrizada
 db.ColecColab.find({$and:[{IDColab: {$gte:2}} , {IDColab: {$lte:5}}]}).pretty()
 db.ColecColab.find({$or: [{NomeColab: 'Kauane'},{NomeColab: 'Luiz'}]}).pretty()
+db.ColecColab.find({IDColab: {$not : {$gte: 3}}}).pretty()
 
+db.ColecColab.find({IDColab: {$not : {$lte : 3}}}).pretty()
 
 
 
