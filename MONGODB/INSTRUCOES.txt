@@ -1,0 +1,36 @@
+//INSTRUCAO PARA CRIAR O DB
+>use DBColaboradores
+
+//Visualizar os DBs
+> show databases
+
+//instrução insert
+>db.ColecColab.insert({ IDColab: 1, NomeColab: 'Amanda' })
+
+//inserir varios dados ao mesmo tempo
+var dadosColab = [{IDColab: 2, NomeColab: 'Anderson'},{IDColab: 3, NomeColab: 'Eduardo' },{IDColab: 4, NomeColab: 'Kauane'},{IDColab: 5, NomeColab: 'Luiz'},{IDColab:6, NomeColab: 'Nicario'}]
+db.ColecColab.insert(dadosColab)
+
+//busca e seleção dentro da collection MongoDB
+db.ColecColab.find()
+db.ColecColab.find().forEach(printjson)
+db.ColecColab.find({ NomeColab: 'Anderson'}).forEach(printjson)
+
+//Operadores de relação/comparação para busca parametrizada
+db.ColecColab.find({ IDColab: {$gt:2}}).forEach(printjson)
+db.ColecColab.find({ IDColab: {$lt:2}}).forEach(printjson)
+db.ColecColab.find({ NomeColab: {$eq:'Eduardo'}}).forEach(printjson)
+db.ColecColab.find({IDColab :{$gte: 3}}).pretty()
+db.ColecColab.find({IDColab :{$lte: 3}}).pretty()
+
+//Operadores lógicos para busca parametrizada
+db.ColecColab.find({$and:[{IDColab: {$gte:2}} , {IDColab: {$lte:5}}]}).pretty()
+db.ColecColab.find({$or: [{NomeColab: 'Kauane'},{NomeColab: 'Luiz'}]}).pretty()
+
+
+
+
+
+
+
+
