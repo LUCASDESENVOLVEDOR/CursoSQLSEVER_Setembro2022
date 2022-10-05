@@ -13,6 +13,7 @@ seguintes elementos de key:
 -  uma busca com valor >= a um parametro
 -  uma busca com valor <= a um parametro
 -  uma busca com intervalo de valores
--  uma busca com o metodo update, uma com limit e uma com sort.
+-  uma busca com o metodo update
+-  uma busca uma com limit e uma busca com sort.
 -  uma busca com o metodo remove()
 
