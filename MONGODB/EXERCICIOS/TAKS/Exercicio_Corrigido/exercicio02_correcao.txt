@@ -1,0 +1,31 @@
+Expressão Regular
+Uma expressão regular é uma forma comum e concisa de representar 
+algum tipo de padrão em texto.
+
+Documentação:
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions
+
+1.	Selecione todos os registros em que as descrições contenham em qualquer parte da palavra, 'js'.
+db.tarefas.find({ descricao: /js/i }).pretty()
+
+i = ignore case
+$ = corresponde ao final do texto
+
+2.	Selecione todos os registros em que as descrições terminem com a letra 't'.
+db.tarefas.find({ descricao: /t$/ }).pretty()
+
+3.	Selecione todos os registros em que as descrições terminem com a letra 'l'.
+db.tarefas.find({ descricao: /l$/ }).pretty()
+
+4.	Selecione todos os registros em que as descrições terminem com a letra 't' ou 'l'.
+db.tarefas.find({ $or : [{descricao: /t$/}, {descricao: /l$/}] }).pretty()
+
+db.tarefas.find({ descricao: { $in : [ /T$/i, /l$/ ]}}).pretty()
+
+5.	Selecione todos os registros em que as descrições comecem com a letra 'b'.
+db.tarefas.find({ descricao: /^b/i }).pretty()
+
+^ = inicio de qualquer sequencia
+
+6.	Selecione todos os registros em que as descrições comecem com a letra 'j' ou 'h'.
+db.tarefas.find({ descricao: { $in : [ /^j/, /^h/ ] }}).pretty()
